@@ -1,0 +1,4 @@
+F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\1.6\Assemblies\ApparelDamageVisuals.dll
+F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\Debug\ApparelDamageVisuals.csproj.AssemblyReference.cache
+F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\Debug\ApparelDamageVisuals.csproj.CoreCompileInputs.cache
+F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\Debug\ApparelDamageVisuals.dll
