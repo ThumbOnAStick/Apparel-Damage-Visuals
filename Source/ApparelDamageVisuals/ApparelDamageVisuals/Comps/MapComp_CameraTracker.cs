@@ -20,7 +20,7 @@ namespace ApparelDamageVisuals.Comps
             // Handle F11 key press to set camera zoom
             if (Event.current.type == EventType.Used && Event.current.keyCode == KeyCode.F11)
             {
-                Find.CameraDriver.SetRootPosAndSize(Find.CameraDriver.MapPosition.ToVector3(), 20f);
+                Find.CameraDriver.SetRootPosAndSize(Find.CameraDriver.MapPosition.ToVector3(), 15f);
                 Event.current.Use(); // Consume the event
             }
         }
