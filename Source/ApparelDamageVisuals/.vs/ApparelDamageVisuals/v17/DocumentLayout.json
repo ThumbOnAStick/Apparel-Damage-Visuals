@@ -3,20 +3,39 @@
   "WorkspaceRootPath": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|f:\\steam\\steamapps\\common\\rimworld\\mods\\apparel damage visuals\\source\\appareldamagevisuals\\appareldamagevisuals\\comps\\mapcomp_cameratracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\comps\\mapcomp_cameratracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\advgraphics\\tornapparelrotdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advgraphics\\tornapparelrotdrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\patches\\apparelgraphicpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\patches\\apparelgraphicpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\appareldamagevisualsmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\appareldamagevisualsmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|f:\\steam\\steamapps\\common\\rimworld\\mods\\apparel damage visuals\\source\\appareldamagevisuals\\appareldamagevisuals\\advsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|f:\\steam\\steamapps\\common\\rimworld\\mods\\apparel damage visuals\\source\\appareldamagevisuals\\appareldamagevisuals\\advgraphics\\graphic_tornwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advgraphics\\graphic_tornwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\advgraphics\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advgraphics\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\utils\\shapehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\utils\\shapehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\patches\\apparelgraphicpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\patches\\apparelgraphicpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ApparelDamageVisuals||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\advgraphics\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advgraphics\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\patches\\metapatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,15 +46,7 @@
       "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\advgraphics\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\utils\\shapehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\utils\\shapehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\appareldamagevisuals\\appareldamagevisualsmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|solutionrelative:appareldamagevisuals\\appareldamagevisualsmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ApparelDamageVisuals||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{2B80372B-9694-484B-BF20-6E04F05CA761}|ApparelDamageVisuals\\ApparelDamageVisuals.csproj|f:\\steam\\steamapps\\common\\rimworld\\mods\\apparel damage visuals\\source\\appareldamagevisuals\\appareldamagevisuals\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,38 +56,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApparelDamageVisuals",
+              "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
+              "RelativeDocumentMoniker": "ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
+              "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
+              "RelativeToolTip": "ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-01T07:02:50.197Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ADVSettings.cs",
+              "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVSettings.cs",
+              "RelativeDocumentMoniker": "ApparelDamageVisuals\\ADVSettings.cs",
+              "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVSettings.cs",
+              "RelativeToolTip": "ApparelDamageVisuals\\ADVSettings.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T05:51:15.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MapComp_CameraTracker.cs",
+              "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Comps\\MapComp_CameraTracker.cs",
+              "RelativeDocumentMoniker": "ApparelDamageVisuals\\Comps\\MapComp_CameraTracker.cs",
+              "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Comps\\MapComp_CameraTracker.cs",
+              "RelativeToolTip": "ApparelDamageVisuals\\Comps\\MapComp_CameraTracker.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T04:55:17.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TornApparelRotDrawer.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\TornApparelRotDrawer.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\ADVGraphics\\TornApparelRotDrawer.cs",
               "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\TornApparelRotDrawer.cs",
               "RelativeToolTip": "ApparelDamageVisuals\\ADVGraphics\\TornApparelRotDrawer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBgAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T23:40:30.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Graphic_TornWrapper.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\Graphic_TornWrapper.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\ADVGraphics\\Graphic_TornWrapper.cs",
               "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\Graphic_TornWrapper.cs",
               "RelativeToolTip": "ApparelDamageVisuals\\ADVGraphics\\Graphic_TornWrapper.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T13:24:30.492Z",
               "EditorCaption": ""
@@ -89,13 +134,14 @@
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\Utils\\ShapeHelper.cs",
               "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Utils\\ShapeHelper.cs",
               "RelativeToolTip": "ApparelDamageVisuals\\Utils\\ShapeHelper.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T12:25:45.553Z"
+              "WhenOpened": "2025-08-30T12:25:45.553Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Circle.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\Circle.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\ADVGraphics\\Circle.cs",
@@ -108,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Shape.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ADVGraphics\\Shape.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\ADVGraphics\\Shape.cs",
@@ -116,23 +162,25 @@
               "RelativeToolTip": "ApparelDamageVisuals\\ADVGraphics\\Shape.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAowBcAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T11:27:57.707Z"
+              "WhenOpened": "2025-08-30T11:27:57.707Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ApparelGraphicPatch.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Patches\\ApparelGraphicPatch.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\Patches\\ApparelGraphicPatch.cs",
               "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Patches\\ApparelGraphicPatch.cs",
               "RelativeToolTip": "ApparelDamageVisuals\\Patches\\ApparelGraphicPatch.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBkAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwCMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T11:00:51.574Z"
+              "WhenOpened": "2025-08-30T11:00:51.574Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "MetaPatches.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\Patches\\MetaPatches.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\Patches\\MetaPatches.cs",
@@ -140,28 +188,18 @@
               "RelativeToolTip": "ApparelDamageVisuals\\Patches\\MetaPatches.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T10:51:42.154Z"
+              "WhenOpened": "2025-08-30T10:51:42.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ApparelDamageVisuals",
-              "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
-              "RelativeDocumentMoniker": "ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
-              "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
-              "RelativeToolTip": "ApparelDamageVisuals\\ApparelDamageVisuals.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-30T10:47:50.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ApparelDamageVisualsMod.cs",
               "DocumentMoniker": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisualsMod.cs",
               "RelativeDocumentMoniker": "ApparelDamageVisuals\\ApparelDamageVisualsMod.cs",
               "ToolTip": "F:\\Steam\\steamapps\\common\\RimWorld\\Mods\\Apparel Damage Visuals\\Source\\ApparelDamageVisuals\\ApparelDamageVisuals\\ApparelDamageVisualsMod.cs",
               "RelativeToolTip": "ApparelDamageVisuals\\ApparelDamageVisualsMod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAf3tHqhYrwCUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T10:46:00.366Z",
               "EditorCaption": ""

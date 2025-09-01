@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	 <ADV.ADVMod>Apparel Damage Visuals</ADV.ADVMod>
+     <ADV.MaxCameraZoom>Max Camera Zoom: {0}</ADV.MaxCameraZoom>
+     <ADV.MaxCameraZoom.Tooltip>Only render torn apparels when camera zoom is smaller than the number.</ADV.MaxCameraZoom.Tooltip> 
+
+</LanguageData>

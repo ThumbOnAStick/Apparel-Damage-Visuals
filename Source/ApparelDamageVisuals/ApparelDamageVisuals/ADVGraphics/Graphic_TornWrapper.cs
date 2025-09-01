@@ -49,6 +49,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             return new IntRange(min, max);
         }
 
+    
 
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
@@ -71,6 +72,10 @@ namespace ApparelDamageVisuals.ADVGraphics
             return base.MatAt(rot, thing);
         }
 
+        protected override void DrawMeshInt(Mesh mesh, Vector3 loc, Quaternion quat, Material mat)
+        {
+            base.DrawMeshInt(mesh, loc, quat, mat);
+        }
 
         public override void DrawWorker(Vector3 loc, Rot4 rot, ThingDef thingDef, Thing thing, float extraRotation)
         {

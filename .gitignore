@@ -1,0 +1,4 @@
+# Ignore debug symbol and index files
+*.pdb
+*.vsidx
+*.json

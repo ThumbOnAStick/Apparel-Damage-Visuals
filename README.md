@@ -6,3 +6,5 @@ This is a mod for rimworld 1.6, it applies torn visuals on apparels when their h
 - [ ] Rely on Camera+ to decide when to show visuals
 - [ ] Various visuals for different apparels (fabric, metallic)
 - [ ] Various visuals for damage types (burn, cut etc)
+# Acknowledgement
+I used copilot for ideas in material replacing.

@@ -20,19 +20,27 @@ namespace ApparelDamageVisuals.ADVGraphics
             durabilityCached = 0;
         }
 
+        bool CanRenderNow()
+        {
+            return ApparelDamageVisualsMod.Settings.MaxCameraZoom > Find.Camera.orthographicSize;
+        }
+
+
         public Material GetMaterial(Material baseMat, int seed, IntRange holeCount, float durability)
         {
+
             // Use cached material as piority
             if (this.materialCached != null && durabilityCached == durability)
             {
                 return this.materialCached;
             }
 
-            // Avoid calling in main thread
-            if (!UnityData.IsInMainThread)
+            // Avoid calling in main thread or when camera is too far away
+            if (!UnityData.IsInMainThread || !CanRenderNow())
             {
                 return baseMat;
             }
+
 
             this.durabilityCached = durability;
             // Render Torn Material on main thread only
