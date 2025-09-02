@@ -11,16 +11,17 @@ namespace ApparelDamageVisuals
 {
     public class ADVSettings : Verse.ModSettings
     {
-
-        public float MaxCameraZoom => (float)maxCameraZoom;
-
         private int maxCameraZoom;  
         private bool allowColonists;
         private bool allowAlive;
 
+        public float MaxCameraZoom => (float)maxCameraZoom;
+        public bool AllowColonists => allowColonists;
+        public bool AllowAlive => allowAlive;
+
         public ADVSettings()
         {
-            maxCameraZoom = 7;
+            maxCameraZoom = 15;
         }
 
         public override void ExposeData()
@@ -36,7 +37,7 @@ namespace ApparelDamageVisuals
         {
             Listing_Standard listing_Standard = new Listing_Standard();
             listing_Standard.Begin(inRect);
-            maxCameraZoom = (int)listing_Standard.SliderLabeled("ADV.MaxCameraZoom".Translate(maxCameraZoom), maxCameraZoom, 3, 10, 0.5f , "ADV.MaxCameraZoom.Tooltip".Translate());
+            maxCameraZoom = (int)listing_Standard.SliderLabeled("ADV.MaxCameraZoom".Translate(maxCameraZoom), maxCameraZoom, 3, 20, 0.5f , "ADV.MaxCameraZoom.Tooltip".Translate());
             listing_Standard.CheckboxLabeled("ADV.AllowColonists".Translate(), ref this.allowColonists, 1);
             listing_Standard.CheckboxLabeled("ADV.AllowAlive".Translate(), ref this.allowAlive, 1);
             listing_Standard.End();

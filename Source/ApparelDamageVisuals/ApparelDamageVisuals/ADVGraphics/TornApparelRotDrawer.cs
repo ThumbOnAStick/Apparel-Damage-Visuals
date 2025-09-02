@@ -10,6 +10,9 @@ using Verse;
 
 namespace ApparelDamageVisuals.ADVGraphics
 {
+    /// <summary>
+    /// Drawer for broken clothes
+    /// </summary>
     internal class TornApparelRotDrawer
     {
         float durabilityCached;
@@ -47,12 +50,12 @@ namespace ApparelDamageVisuals.ADVGraphics
             return this.materialCached = BuildTornMaterial(baseMat, seed, holeCount);
         }
 
-        private static void CopyIfPresent(Material src, Material dst, string prop)
+        protected void CopyIfPresent(Material src, Material dst, string prop)
         {
             if (src.HasProperty(prop)) dst.SetColor(prop, src.GetColor(prop));
         }
 
-        private Material BuildTornMaterial(Material baseMat, int seed, IntRange holeCount)
+        protected Material BuildTornMaterial(Material baseMat, int seed, IntRange holeCount)
         {
             var shader = baseMat.shader;
             var newMat = new Material(shader);
@@ -84,14 +87,14 @@ namespace ApparelDamageVisuals.ADVGraphics
             return newMat;
         }
 
-        FloatRange HoleSize(float scale)
+        protected FloatRange HoleSize(float scale)
         {
             var minSize = (1 - this.durabilityCached) * (scale / 7);
             var maxSize = minSize * 1.5f;
             return new FloatRange(minSize, maxSize);
         }
 
-        private Texture2D CloneAndStampAlpha(Texture2D src, int seed, IntRange holeCount)
+        protected Texture2D CloneAndStampAlpha(Texture2D src, int seed, IntRange holeCount)
         {
             if (src == null) return null;
 
@@ -146,8 +149,13 @@ namespace ApparelDamageVisuals.ADVGraphics
                 {
                     ShapeHelper.DrawTransparentCircle(ref pixels, c, w, h);
                 }
+                else if (s is Triangle t)
+                {
+                    ShapeHelper.DrawTransparentTriangle(ref pixels, t, w, h);
+                }
                 else
                 {
+                    // Fallback for any other shapes
                     for (int i = 0; i < pixels.Length; i++)
                     {
                         int x = i % w;
@@ -167,7 +175,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             return readableTex;
         }
 
-        private static bool ComputeOpaqueBounds(Color32[] pixels, int w, int h, byte alphaThreshold,
+        protected bool ComputeOpaqueBounds(Color32[] pixels, int w, int h, byte alphaThreshold,
                                               out int minX, out int minY, out int maxX, out int maxY)
         {
             minX = w; minY = h; maxX = -1; maxY = -1;
@@ -190,7 +198,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             return maxX >= 0;
         }
 
-        private IEnumerable<Shape> CreateHoleShapes(int w, int h, int minX, int minY, int maxX, int maxY, IntRange holeCount, System.Random rng)
+        protected virtual IEnumerable<Shape> CreateHoleShapes(int w, int h, int minX, int minY, int maxX, int maxY, IntRange holeCount, System.Random rng)
         {
             int numberOfHoles = holeCount.min <= holeCount.max
                 ? holeCount.min + rng.Next(holeCount.max - holeCount.min + 1)
@@ -203,11 +211,11 @@ namespace ApparelDamageVisuals.ADVGraphics
             var holeSize = HoleSize(scale);
             for (int i = 0; i < numberOfHoles; i++)
             {
-                // Size relative to content bounds
                 float r = holeSize.min + (float)rng.NextDouble() * (holeSize.max - holeSize.min);
                 int x = minX + rng.Next(Math.Max(1, maxX - minX + 1));
                 int y = minY + rng.Next(Math.Max(1, maxY - minY + 1));
                 yield return new Circle(x, y, w, h, r);
+
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using ApparelDamageVisuals.Utils;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ApparelDamageVisuals.ADVGraphics
         private readonly Dictionary<Rot4, TornApparelRotDrawer> drawers = new Dictionary<Rot4, TornApparelRotDrawer>();
         private readonly int seed;
         private float durabilityCached;
+        private bool isArmor;
 
         public Graphic_TornWrapper(Graphic inner, Thing targetThing, bool isVertical = false, bool drawLine = false)
         {
@@ -26,6 +28,10 @@ namespace ApparelDamageVisuals.ADVGraphics
             this.data = inner.data;
             this.color = inner.color;
             this.colorTwo = inner.colorTwo;
+            if (targetThing!= null && targetThing.def.tradeTags != null && targetThing.def.tradeTags.Contains("Armor"))
+            {
+                this.isArmor = true;
+            }
         }
 
         public override string ToString() => $"Graphic_TornWrapper({inner})";
@@ -53,12 +59,19 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
+            if(thing == null)
+            {
+                return base.MatAt(rot, thing);
+            }
             try
             {
                 durabilityCached = Durability;
                 if (!drawers.TryGetValue(rot, out TornApparelRotDrawer drawer))
                 {
-                    drawers[rot] = drawer = new TornApparelRotDrawer();
+                    if (isArmor)
+                        drawers[rot] = drawer = new TornArmorRotDrawer();
+                    else
+                        drawers[rot] = drawer = new TornApparelRotDrawer();
                 }
                 var baseMat = inner.MatAt(rot, thing);
                 return drawer.GetMaterial(baseMat, seed, this.HoleCount(), Durability);
