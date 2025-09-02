@@ -8,5 +8,10 @@ This is a mod for rimworld 1.6, it applies torn visuals on apparels when their h
 - [x] Rely on Camera+ to decide when to show visuals
 - [x] Various visuals for different apparels (fabric, metallic)
 - [ ] Various visuals for damage types (burn, cut etc)
+# List of configurables 
+- Adjust max camera zoom when damag visuals can be shown
+- Allow alive (or not) 
+- Allow colonists (or not)
 # Acknowledgement
 I used copilot for ideas in material replacing.
+
