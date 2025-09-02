@@ -1,3 +1,5 @@
+
+![Preview](https://github.com/user-attachments/assets/739d61a2-4467-4dad-9093-81664e49f793)
 # About
 This is a mod for rimworld 1.6, it applies torn visuals on apparels when their hitpoints are below max. 
 # Features
