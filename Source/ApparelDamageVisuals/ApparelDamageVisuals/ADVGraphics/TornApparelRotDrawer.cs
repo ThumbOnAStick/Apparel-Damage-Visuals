@@ -17,6 +17,7 @@ namespace ApparelDamageVisuals.ADVGraphics
     {
         float durabilityCached;
         Material materialCached;
+        protected enum EdgeDirection {North, South, East, West}
 
         public TornApparelRotDrawer()
         {
@@ -213,23 +214,24 @@ namespace ApparelDamageVisuals.ADVGraphics
             {
                 float r = holeSize.min + (float)rng.NextDouble() * (holeSize.max - holeSize.min);
                 r *= ApparelDamageVisualsMod.Settings.Size;
-                var edge = rng.Next(4);
+                EdgeDirection edgeDirection = (EdgeDirection)rng.Next(4);
+
                 int realMinX = minX;
                 int realMaxX = maxX;
                 int realMinY = minY;
                 int realMaxY = maxY;
-                switch(edge)
+                switch(edgeDirection)
                 {
-                    case 0: // West
+                    case EdgeDirection.West: // West
                         realMaxX = minX + (int)r;
                         break;
-                    case 1: // East
+                    case EdgeDirection.East: // East
                         realMinX = maxX - (int)r; 
                         break;
-                    case 2: // North
+                    case EdgeDirection.North: // North
                         realMaxY = minY + (int)r;
                         break;
-                    case 3: // South
+                    case EdgeDirection.South: // South
                         realMinY = maxY - (int)r;
                         break;  
                 }

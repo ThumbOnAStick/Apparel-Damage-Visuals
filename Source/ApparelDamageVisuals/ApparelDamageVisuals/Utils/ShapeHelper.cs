@@ -1,5 +1,6 @@
 ﻿using ApparelDamageVisuals.ADVGraphics;
 using System;
+using System.Configuration;
 using UnityEngine;
 using Verse;
 
@@ -52,7 +53,7 @@ namespace ApparelDamageVisuals.Utils
                         
                         // Blend alpha: reduce existing alpha by coverage amount
                         float newAlpha = p.a * (1f - coverage);
-                        if (ApparelDamageVisualsMod.Settings.Antialiasing)
+                        if (ApparelDamageVisualsMod.Settings.Outline)
                         {
                             p = SetBlack(p);
                         }
@@ -184,6 +185,10 @@ namespace ApparelDamageVisuals.Utils
                             // Blend alpha: reduce existing alpha by coverage amount
                             float newAlpha = p.a * (1f - coverage);
                             p.a = (byte)Mathf.RoundToInt(newAlpha);
+                            if(ApparelDamageVisualsMod.Settings.Outline)
+                            {
+                                p = SetBlack(p);
+                            }
                             pixels[idx] = p;
                         }
 
@@ -205,22 +210,24 @@ namespace ApparelDamageVisuals.Utils
             float pixelLeft = pixelX - 0.5f;
             float pixelRight = pixelX + 0.5f;
             
-            // Apply thickness by expanding the triangle edges outward
-            float thicknessOffset = ApparelDamageVisualsMod.Settings.Thickness * 0.5f;
-            float expandedLeftEdge = leftEdge - thicknessOffset;
-            float expandedRightEdge = rightEdge + thicknessOffset;
-            
-            // Calculate intersection of pixel bounds with expanded triangle span
-            float intersectLeft = Math.Max(pixelLeft, expandedLeftEdge);
-            float intersectRight = Math.Min(pixelRight, expandedRightEdge);
-            
+
+            // Calculate intersection of pixel bounds 
+            float intersectLeft = Math.Max(pixelLeft, leftEdge);
+            float intersectRight = Math.Min(pixelRight, rightEdge);
+
             if (intersectLeft >= intersectRight)
-                return 0f; // No coverage
-            
-            // Coverage is the fraction of the pixel that's inside the expanded triangle
-            float pixelWidth = pixelRight - pixelLeft; // Always 1.0 for unit pixels
-            float coverage = (intersectRight - intersectLeft) / pixelWidth;
-            return Mathf.Clamp01(coverage);
+            {
+                if (intersectLeft - intersectRight > ApparelDamageVisualsMod.Settings.Thickness)
+                    return 0f; // No coverage
+                else
+                {
+                    // Coverage is the fraction of the pixel that's inside the expanded triangle
+                    float pixelWidth = pixelRight - pixelLeft; // Always 1.0 for unit pixels
+                    float coverage = (intersectRight - intersectLeft + ApparelDamageVisualsMod.Settings.Thickness) / (pixelWidth + ApparelDamageVisualsMod.Settings.Thickness);
+                    return Mathf.Clamp01(coverage);
+                }
+            }
+            return 1;
         }
 
         private static void Swap(ref int a, ref int b)
