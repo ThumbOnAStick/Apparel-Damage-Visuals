@@ -11,6 +11,7 @@ namespace ApparelDamageVisuals
     public class ApparelDamageVisualsMod : Mod
     {
 
+
         private readonly ADVSettings settings;
 
         public static ApparelDamageVisualsMod Instance { get; private set; }
@@ -25,7 +26,10 @@ namespace ApparelDamageVisuals
         {
             Instance = this;
             settings = GetSettings<ADVSettings>();
+
         }
+
+        
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
@@ -37,6 +41,8 @@ namespace ApparelDamageVisuals
         {
             return "ADV.ADVMod".Translate();
         }
+
+
 
 
     }

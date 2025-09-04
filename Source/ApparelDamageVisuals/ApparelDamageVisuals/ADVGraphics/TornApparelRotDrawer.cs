@@ -28,7 +28,6 @@ namespace ApparelDamageVisuals.ADVGraphics
             return ApparelDamageVisualsMod.Settings.MaxCameraZoom > Find.Camera.orthographicSize;
         }
 
-
         public Material GetMaterial(Material baseMat, int seed, IntRange holeCount, float durability)
         {
 
@@ -198,6 +197,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             return maxX >= 0;
         }
 
+    
         protected virtual IEnumerable<Shape> CreateHoleShapes(int w, int h, int minX, int minY, int maxX, int maxY, IntRange holeCount, System.Random rng)
         {
             int numberOfHoles = holeCount.min <= holeCount.max
@@ -212,8 +212,29 @@ namespace ApparelDamageVisuals.ADVGraphics
             for (int i = 0; i < numberOfHoles; i++)
             {
                 float r = holeSize.min + (float)rng.NextDouble() * (holeSize.max - holeSize.min);
-                int x = minX + rng.Next(Math.Max(1, maxX - minX + 1));
-                int y = minY + rng.Next(Math.Max(1, maxY - minY + 1));
+                r *= ApparelDamageVisualsMod.Settings.Size;
+                var edge = rng.Next(4);
+                int realMinX = minX;
+                int realMaxX = maxX;
+                int realMinY = minY;
+                int realMaxY = maxY;
+                switch(edge)
+                {
+                    case 0: // West
+                        realMaxX = minX + (int)r;
+                        break;
+                    case 1: // East
+                        realMinX = maxX - (int)r; 
+                        break;
+                    case 2: // North
+                        realMaxY = minY + (int)r;
+                        break;
+                    case 3: // South
+                        realMinY = maxY - (int)r;
+                        break;  
+                }
+                int x = realMinX + rng.Next(Math.Max(1, realMaxX - realMinX + 1));
+                int y = realMinY + rng.Next(Math.Max(1, realMaxY - realMinY + 1));
                 yield return new Circle(x, y, w, h, r);
 
             }

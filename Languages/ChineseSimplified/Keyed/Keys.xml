@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	 <ADV.ADVMod>衣物破损特效</ADV.ADVMod>
-    <ADV.MaxCameraZoom>最大摄像机缩放: {0}</ADV.MaxCameraZoom>
-     <ADV.MaxCameraZoom.Tooltip>只有摄像头小于这个范围才会渲染衣物破损效果</ADV.MaxCameraZoom.Tooltip> 
+     <ADV.ADVMod>衣物破损特效</ADV.ADVMod>
+     <ADV.MaxCameraZoom>最大摄像机缩放: {0}</ADV.MaxCameraZoom>
+     <ADV.MaxCameraZoom.Tooltip>只有摄像头小于这个范围才会渲染衣物破损效果</ADV.MaxCameraZoom.Tooltip>
      <ADV.AllowColonists>允许殖民者</ADV.AllowColonists>
      <ADV.AllowAlive>允许生者</ADV.AllowAlive>
+     <ADV.Antialiasing>抗锯齿</ADV.Antialiasing>
+     <ADV.Outline>描边</ADV.Outline>
+     <ADV.Thickness>边缘厚度</ADV.Thickness>
+     <ADV.Zize>洞的大小</ADV.Zize>
+     <ADV.Warning1>衣物破损特效:请确保 {0} 或者 {1} 被启用。</ADV.Warning1>
+
 </LanguageData>

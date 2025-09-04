@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	 <ADV.ADVMod>Apparel Damage Visuals</ADV.ADVMod>
+     <ADV.ADVMod>Apparel Damage Visuals</ADV.ADVMod>
      <ADV.MaxCameraZoom>Max Camera Zoom: {0}</ADV.MaxCameraZoom>
-     <ADV.MaxCameraZoom.Tooltip>Only render torn apparels when camera zoom is smaller than the number.</ADV.MaxCameraZoom.Tooltip> 
+     <ADV.MaxCameraZoom.Tooltip>Only render torn apparels when camera zoom is smaller than the number.</ADV.MaxCameraZoom.Tooltip>
      <ADV.AllowColonists>Allow visuals to be shown on colonists.</ADV.AllowColonists>
      <ADV.AllowAlive>Allow visauls to be shown on living people.</ADV.AllowAlive>
+     <ADV.Antialiasing>Antialiasing</ADV.Antialiasing>
+     <ADV.Outline>Outline</ADV.Outline>
+     <ADV.Thickness>Edge thickness: {0}</ADV.Thickness>
+     <ADV.Zize>Hole Size: {0}</ADV.Zize>
+     <ADV.Warning1>Apperal Damage Visuals: Plase ensure either {0} or {1} is loaded</ADV.Warning1>
 </LanguageData>
