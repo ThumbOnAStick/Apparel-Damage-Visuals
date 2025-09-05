@@ -22,6 +22,17 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public Graphic_TornWrapper(Graphic inner, Thing targetThing, bool isVertical = false, bool drawLine = false)
         {
+            if (inner == null)
+            {
+                return;
+            }
+
+            if (targetThing == null)
+            {
+                Log.Warning("ADV: Graphic_TornWrapper received null targetThing. Skipping wrapper creation.");
+                return;
+            }
+
             this.inner = inner;
             this.targetThing = targetThing;
             this.seed = targetThing.thingIDNumber;
@@ -36,7 +47,7 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override string ToString() => $"Graphic_TornWrapper({inner})";
 
-        public override Material MatSingle => inner.MatSingle;
+        public override Material MatSingle => inner?.MatSingle;
 
         float Durability => (float)this.targetThing.HitPoints/(float)this.targetThing.MaxHitPoints;
 
@@ -59,7 +70,7 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
-            if(thing == null)
+            if(thing == null || inner == null)
             {
                 return base.MatAt(rot, thing);
             }
@@ -92,7 +103,7 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override void DrawWorker(Vector3 loc, Rot4 rot, ThingDef thingDef, Thing thing, float extraRotation)
         {
-            inner.DrawWorker(loc, rot, thingDef, thing, extraRotation);
+            inner?.DrawWorker(loc, rot, thingDef, thing, extraRotation);
         }
     }
 }

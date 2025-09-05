@@ -129,8 +129,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             var pixels = readableTex.GetPixels32();
 
             // Compute opaque (colored) bounds from alpha channel
-            int minX, minY, maxX, maxY;
-            bool hasOpaque = ComputeOpaqueBounds(pixels, w, h, 8, out minX, out minY, out maxX, out maxY);
+            bool hasOpaque = ComputeOpaqueBounds(pixels, w, h, 8, out int minX, out int minY, out int maxX, out int maxY);
             if (!hasOpaque)
             {
                 // Fallback to full texture if fully transparent

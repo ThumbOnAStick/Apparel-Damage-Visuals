@@ -6,3 +6,9 @@ F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\Source\ApparelDam
 F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\x64\Debug\ApparelDamageVisuals.pdb
 F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\1.6\Assemblies\ApparelDamageVisuals.dll
 F:\Steam\steamapps\common\RimWorld\Mods\Apparel Damage Visuals\1.6\Assemblies\ApparelDamageVisuals.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\1.6\Assemblies\ApparelDamageVisuals.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\1.6\Assemblies\ApparelDamageVisuals.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\x64\Debug\ApparelDamageVisuals.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\x64\Debug\ApparelDamageVisuals.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\x64\Debug\ApparelDamageVisuals.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apparel-Damage-Visuals\Source\ApparelDamageVisuals\ApparelDamageVisuals\obj\x64\Debug\ApparelDamageVisuals.pdb

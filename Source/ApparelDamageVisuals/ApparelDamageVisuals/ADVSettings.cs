@@ -31,6 +31,7 @@ namespace ApparelDamageVisuals
         {
             maxCameraZoom = 15;
             thickness = 3;
+            size = 1;
             allowAlive = true;
             allowColonists = true;
             antialiasing = true;
