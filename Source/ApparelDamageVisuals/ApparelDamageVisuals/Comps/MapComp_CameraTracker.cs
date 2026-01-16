@@ -32,16 +32,5 @@ namespace ApparelDamageVisuals.Comps
                 Find.WindowStack.Add(new Dialog_MessageBox("ADV.Warning1".Translate(cameraP, cameraS)));
             }
         }
-
-
-        public override void MapComponentOnGUI()
-        {
-            // Handle F11 key press to set camera zoom
-            if (Event.current.type == EventType.Used && Event.current.keyCode == KeyCode.F11)
-            {
-                Find.CameraDriver.SetRootPosAndSize(Find.CameraDriver.MapPosition.ToVector3(), 11f);
-                Event.current.Use(); // Consume the event
-            }
-        }
     }
 }

@@ -170,7 +170,7 @@ namespace ApparelDamageVisuals.Utils
                         break;
                     }
                     var p = pixels[idx];
-                 
+         
                     if (!ApparelDamageVisualsMod.Settings.Antialiasing)
                     {
                         p.a = 0;
@@ -179,19 +179,22 @@ namespace ApparelDamageVisuals.Utils
                     else
                     {
                         float coverage = CalculatePixelCoverage(x, leftX, rightX);
-                    
-                        if (coverage > 0f)
+             
+                        if (coverage >= 1f)
                         {
-                            // Blend alpha: reduce existing alpha by coverage amount
+                            p.a = 0;
+                            pixels[idx] = p;
+                        }
+                        else if (coverage > 0f)
+                        {
                             float newAlpha = p.a * (1f - coverage);
-                            p.a = (byte)Mathf.RoundToInt(newAlpha);
-                            if(ApparelDamageVisualsMod.Settings.Outline)
+                            if (ApparelDamageVisualsMod.Settings.Outline)
                             {
                                 p = SetBlack(p);
                             }
+                            p.a = (byte)Mathf.RoundToInt(newAlpha);
                             pixels[idx] = p;
                         }
-
                     }
                 }
             }

@@ -8,7 +8,7 @@
      <ADV.Antialiasing>抗锯齿</ADV.Antialiasing>
      <ADV.Outline>描边</ADV.Outline>
      <ADV.Thickness>边缘厚度</ADV.Thickness>
-     <ADV.Zize>洞的大小</ADV.Zize>
+     <ADV.Zize>洞的大小：{0}</ADV.Zize>
      <ADV.Warning1>衣物破损特效:请确保 {0} 或者 {1} 被启用。</ADV.Warning1>
 
 </LanguageData>

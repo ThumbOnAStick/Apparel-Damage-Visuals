@@ -20,26 +20,25 @@ namespace ApparelDamageVisuals.ADVGraphics
         private float durabilityCached;
         private bool isArmor;
 
+        // Add this property to check if wrapper initialized correctly
+        public bool IsValid => inner != null && targetThing != null;
+
         public Graphic_TornWrapper(Graphic inner, Thing targetThing, bool isVertical = false, bool drawLine = false)
         {
-            if (inner == null)
-            {
-                return;
-            }
-
-            if (targetThing == null)
-            {
-                Log.Warning("ADV: Graphic_TornWrapper received null targetThing. Skipping wrapper creation.");
-                return;
-            }
-
+            // Store inner even if null so we can check IsValid
             this.inner = inner;
             this.targetThing = targetThing;
+            
+            if (inner == null || targetThing == null)
+            {
+                return;
+            }
+
             this.seed = targetThing.thingIDNumber;
             this.data = inner.data;
             this.color = inner.color;
             this.colorTwo = inner.colorTwo;
-            if (targetThing!= null && targetThing.def.tradeTags != null && targetThing.def.tradeTags.Contains("Armor"))
+            if (targetThing.def.tradeTags != null && targetThing.def.tradeTags.Contains("Armor"))
             {
                 this.isArmor = true;
             }
@@ -47,9 +46,12 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override string ToString() => $"Graphic_TornWrapper({inner})";
 
-        public override Material MatSingle => inner?.MatSingle;
+        // Return inner's material, fallback to base only if inner exists
+        public override Material MatSingle => inner != null ? inner.MatSingle : null;
 
-        float Durability => (float)this.targetThing.HitPoints/(float)this.targetThing.MaxHitPoints;
+        float Durability => targetThing != null && targetThing.MaxHitPoints > 0 
+            ? (float)targetThing.HitPoints / targetThing.MaxHitPoints 
+            : 1f;
 
         SimpleCurve MaxHoleCountCurve()
         {
@@ -66,8 +68,6 @@ namespace ApparelDamageVisuals.ADVGraphics
             return new IntRange(min, max);
         }
 
-    
-
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
             if(thing == null || inner == null)
@@ -79,10 +79,10 @@ namespace ApparelDamageVisuals.ADVGraphics
                 durabilityCached = Durability;
                 if (!drawers.TryGetValue(rot, out TornApparelRotDrawer drawer))
                 {
-                    if (isArmor)
-                        drawers[rot] = drawer = new TornArmorRotDrawer();
-                    else
-                        drawers[rot] = drawer = new TornApparelRotDrawer();
+                    //if (isArmor) Disable armor drawer for now
+                    //    drawers[rot] = drawer = new TornArmorRotDrawer();
+                    //else
+                    drawers[rot] = drawer = new TornApparelRotDrawer();
                 }
                 var baseMat = inner.MatAt(rot, thing);
                 return drawer.GetMaterial(baseMat, seed, this.HoleCount(), Durability);

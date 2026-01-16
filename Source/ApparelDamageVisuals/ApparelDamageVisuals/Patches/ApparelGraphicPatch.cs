@@ -23,7 +23,8 @@ namespace ApparelDamageVisuals.Patches
         static bool ValidateApparel(Apparel apparel)
         {
             if (apparel.Wearer == null) return false;
-            if (!ApparelDamageVisualsMod.Settings.AllowColonists && apparel.Wearer.IsColonist) return false;
+            if (apparel.Wearer.IsColonist) return false;
+            //if (!ApparelDamageVisualsMod.Settings.AllowColonists && apparel.Wearer.IsColonist) return false;
             if (!ApparelDamageVisualsMod.Settings.AllowAlive && !apparel.Wearer.Dead) return false;
             List<BodyPartGroupDef> defs = apparel.def.apparel.bodyPartGroups;
             bool validateParts = defs.Contains(BodyPartGroupDefOf.Torso) || defs.Contains(BodyPartGroupDefOf.FullHead) ||
@@ -33,12 +34,16 @@ namespace ApparelDamageVisuals.Patches
 
         public static void Postfix(Apparel apparel, BodyTypeDef bodyType, ref bool __result, ref ApparelGraphicRecord rec)
         {
-            if (ValidateApparel(apparel))
+            // Only wrap if validation passes AND graphic exists
+            if (ValidateApparel(apparel) && rec.graphic != null)
             {
-                rec.graphic = new Graphic_TornWrapper(rec.graphic, apparel);
+                var wrapper = new Graphic_TornWrapper(rec.graphic, apparel);
+                // Only assign if wrapper initialized successfully
+                if (wrapper.IsValid)
+                {
+                    rec.graphic = wrapper;
+                }
             }
-             
-  
         }
     }
 }

@@ -45,7 +45,7 @@ namespace ApparelDamageVisuals
             Scribe_Values.Look(ref maxCameraZoom, "minCameraZoom", 5);
             Scribe_Values.Look(ref thickness, "thickness", 3);
             Scribe_Values.Look(ref size, "size", 1.0f);
-            Scribe_Values.Look(ref allowColonists, "allowColonists", true);
+            //Scribe_Values.Look(ref allowColonists, "allowColonists", true);
             Scribe_Values.Look(ref allowAlive, "allowAlive", true);
             Scribe_Values.Look(ref antialiasing, "antialiasing", true);
             Scribe_Values.Look(ref outline, "outline", true);
