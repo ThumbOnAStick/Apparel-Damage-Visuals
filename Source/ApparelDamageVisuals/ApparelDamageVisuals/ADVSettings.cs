@@ -61,7 +61,7 @@ namespace ApparelDamageVisuals
             var sizeUnNormalized = listing_Standard.SliderLabeled("ADV.Zize".Translate(((double)size).ToString()), size, 0.5f, 3.0f, 0.5f);
             size = Mathf.Round(sizeUnNormalized / 0.25f) * 0.25f;   // Snap to 0.25 
             listing_Standard.GapLine();
-            listing_Standard.CheckboxLabeled("ADV.AllowColonists".Translate(), ref this.allowColonists, 1);
+            //listing_Standard.CheckboxLabeled("ADV.AllowColonists".Translate(), ref this.allowColonists, 1);
             listing_Standard.CheckboxLabeled("ADV.AllowAlive".Translate(), ref this.allowAlive, 1);
             listing_Standard.GapLine();
             listing_Standard.CheckboxLabeled("ADV.Antialiasing".Translate(), ref this.antialiasing, 1);
