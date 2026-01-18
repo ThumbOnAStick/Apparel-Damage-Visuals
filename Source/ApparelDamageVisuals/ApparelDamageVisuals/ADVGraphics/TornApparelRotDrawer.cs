@@ -105,41 +105,54 @@ namespace ApparelDamageVisuals.ADVGraphics
 
             // Create a readable copy (handles non-readable textures)
             Texture2D readableTex;
-            if (src.isReadable)
+            try
             {
-                readableTex = UnityEngine.Object.Instantiate(src);
+                if (src.isReadable && IsFormatSupported(src.format))
+                {
+                    readableTex = UnityEngine.Object.Instantiate(src);
+                }
+                else
+                {
+                    RenderTexture tmp = RenderTexture.GetTemporary(w, h, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default);
+                    Graphics.Blit(src, tmp);
+
+                    RenderTexture previous = RenderTexture.active;
+                    RenderTexture.active = tmp;
+
+                    readableTex = new Texture2D(w, h, TextureFormat.ARGB32, false);
+                    readableTex.ReadPixels(new Rect(0, 0, w, h), 0, 0);
+                    readableTex.Apply();
+
+                    RenderTexture.active = previous;
+                    RenderTexture.ReleaseTemporary(tmp);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // This path touches the GPU; main-thread only (guarded above).
-                RenderTexture tmp = RenderTexture.GetTemporary(w, h, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
-                Graphics.Blit(src, tmp);
-
-                RenderTexture previous = RenderTexture.active;
-                RenderTexture.active = tmp;
-
-                readableTex = new Texture2D(w, h, TextureFormat.RGBA32, false);
-                readableTex.ReadPixels(new Rect(0, 0, w, h), 0, 0);
-                readableTex.Apply();
-
-                RenderTexture.active = previous;
-                RenderTexture.ReleaseTemporary(tmp);
+                Log.Warning($"[ApparelDamageVisuals] Failed to create readable texture: {ex.Message}");
+                return null;
             }
 
-            var pixels = readableTex.GetPixels32();
+            Color32[] pixels;
+            try
+            {
+                pixels = readableTex.GetPixels32();
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[ApparelDamageVisuals] Failed to read pixels: {ex.Message}");
+                UnityEngine.Object.Destroy(readableTex);
+                return null;
+            }
 
-            // Compute opaque (colored) bounds from alpha channel
             bool hasOpaque = ComputeOpaqueBounds(pixels, w, h, 8, out int minX, out int minY, out int maxX, out int maxY);
             if (!hasOpaque)
             {
-                // Fallback to full texture if fully transparent
                 minX = 0; minY = 0; maxX = w - 1; maxY = h - 1;
             }
 
-            // Use thread-local PRNG: deterministic and thread-safe
             var rng = new System.Random(unchecked(seed * 73856093 ^ 19349663));
 
-            // Create shapes confined to the opaque bounds
             var shapes = CreateHoleShapes(w, h, minX, minY, maxX, maxY, holeCount, rng);
 
             foreach (var s in shapes)
@@ -169,9 +182,35 @@ namespace ApparelDamageVisuals.ADVGraphics
                 }
             }
 
-            readableTex.SetPixels32(pixels);
-            readableTex.Apply(false, false);
+            try
+            {
+                readableTex.SetPixels32(pixels);
+                readableTex.Apply(false, false);
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[ApparelDamageVisuals] Failed to apply pixels: {ex.Message}");
+                UnityEngine.Object.Destroy(readableTex);
+                return null;
+            }
+
             return readableTex;
+        }
+
+        private static bool IsFormatSupported(TextureFormat format)
+        {
+            switch (format)
+            {
+                case TextureFormat.ARGB32:
+                case TextureFormat.RGBA32:
+                case TextureFormat.BGRA32:
+                case TextureFormat.RGB24:
+                case TextureFormat.Alpha8:
+                    return true;
+                default:
+                    // Compressed formats (DXT, ETC, ASTC, etc.) don't support GetPixels32 directly
+                    return false;
+            }
         }
 
         protected bool ComputeOpaqueBounds(Color32[] pixels, int w, int h, byte alphaThreshold,
