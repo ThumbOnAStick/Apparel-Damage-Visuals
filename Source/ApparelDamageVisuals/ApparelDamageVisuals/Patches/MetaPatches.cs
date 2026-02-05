@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using ApparelDamageVisuals.Utils;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,7 @@ namespace ApparelDamageVisuals.Patches
                 Find.WindowStack.Add(box);
             }
 
-            Log.Message("APV: patches were successful");
-
-
+            ADVLogger.ADVMessage("Harmony patches were successful");
         }
     }
 }

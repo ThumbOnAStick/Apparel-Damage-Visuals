@@ -23,8 +23,6 @@ namespace ApparelDamageVisuals.Patches
         static bool ValidateApparel(Apparel apparel)
         {
             if (apparel.Wearer == null) return false;
-            if (apparel.Wearer.IsColonist) return false;
-            //if (!ApparelDamageVisualsMod.Settings.AllowColonists && apparel.Wearer.IsColonist) return false;
             if (!ApparelDamageVisualsMod.Settings.AllowAlive && !apparel.Wearer.Dead) return false;
             List<BodyPartGroupDef> defs = apparel.def.apparel.bodyPartGroups;
             bool validateParts = defs.Contains(BodyPartGroupDefOf.Torso) || defs.Contains(BodyPartGroupDefOf.FullHead) ||

@@ -28,7 +28,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             // Store inner even if null so we can check IsValid
             this.inner = inner;
             this.targetThing = targetThing;
-            
+
             if (inner == null || targetThing == null)
             {
                 return;
@@ -49,28 +49,14 @@ namespace ApparelDamageVisuals.ADVGraphics
         // Return inner's material, fallback to base only if inner exists
         public override Material MatSingle => inner != null ? inner.MatSingle : null;
 
-        float Durability => targetThing != null && targetThing.MaxHitPoints > 0 
-            ? (float)targetThing.HitPoints / targetThing.MaxHitPoints 
+        float Durability => targetThing != null && targetThing.MaxHitPoints > 0
+            ? (float)targetThing.HitPoints / targetThing.MaxHitPoints
             : 1f;
 
-        SimpleCurve MaxHoleCountCurve()
-        {
-            var curve = new SimpleCurve();
-            curve.Add(0f, 20f);
-            curve.Add(1f, 0f);
-            return curve;
-        }
-
-        IntRange HoleCount()
-        {
-            var max = (int)(MaxHoleCountCurve().Evaluate(this.durabilityCached));
-            var min = Math.Max(max - 5, 0);
-            return new IntRange(min, max);
-        }
-
+  
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
-            if(thing == null || inner == null)
+            if (thing == null || inner == null)
             {
                 return base.MatAt(rot, thing);
             }
@@ -79,13 +65,10 @@ namespace ApparelDamageVisuals.ADVGraphics
                 durabilityCached = Durability;
                 if (!drawers.TryGetValue(rot, out TornApparelRotDrawer drawer))
                 {
-                    //if (isArmor) Disable armor drawer for now
-                    //    drawers[rot] = drawer = new TornArmorRotDrawer();
-                    //else
                     drawers[rot] = drawer = new TornApparelRotDrawer();
                 }
                 var baseMat = inner.MatAt(rot, thing);
-                return drawer.GetMaterial(baseMat, seed, this.HoleCount(), Durability);
+                return drawer.GetMaterial(baseMat, Durability);
             }
             catch (Exception e)
             {

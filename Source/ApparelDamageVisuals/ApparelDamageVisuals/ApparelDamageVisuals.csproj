@@ -71,6 +71,10 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\libs\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
@@ -85,11 +89,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADVShader\ADVContentDatabase.cs" />
     <Compile Include="ADVGraphics\Circle.cs" />
     <Compile Include="ADVGraphics\Shape.cs" />
     <Compile Include="ADVGraphics\TornApparelRotDrawer.cs" />
-    <Compile Include="ADVGraphics\TornArmorRotDrawer.cs" />
-    <Compile Include="ADVGraphics\Triangle.cs" />
     <Compile Include="ADVSettings.cs" />
     <Compile Include="ApparelDamageVisualsMod.cs" />
     <Compile Include="ADVGraphics\Graphic_TornWrapper.cs" />
@@ -97,7 +100,7 @@
     <Compile Include="Patches\ApparelGraphicPatch.cs" />
     <Compile Include="Patches\MetaPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\ShapeHelper.cs" />
+    <Compile Include="Utils\ADVLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />
