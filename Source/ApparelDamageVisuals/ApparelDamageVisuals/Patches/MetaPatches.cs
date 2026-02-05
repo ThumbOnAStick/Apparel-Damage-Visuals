@@ -32,7 +32,7 @@ namespace ApparelDamageVisuals.Patches
                 Find.WindowStack.Add(box);
             }
 
-            ADVLogger.ADVMessage("Harmony patches were successful");
+            ADVLogger.Message("Harmony patches were successful");
         }
     }
 }

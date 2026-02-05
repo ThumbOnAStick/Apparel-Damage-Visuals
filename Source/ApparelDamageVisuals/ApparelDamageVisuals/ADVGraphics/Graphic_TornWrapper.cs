@@ -17,8 +17,7 @@ namespace ApparelDamageVisuals.ADVGraphics
         private readonly Thing targetThing;
         private readonly Dictionary<Rot4, TornApparelRotDrawer> drawers = new Dictionary<Rot4, TornApparelRotDrawer>();
         private readonly int seed;
-        private float durabilityCached;
-        private bool isArmor;
+        //private bool isArmor;
 
         // Add this property to check if wrapper initialized correctly
         public bool IsValid => inner != null && targetThing != null;
@@ -38,10 +37,10 @@ namespace ApparelDamageVisuals.ADVGraphics
             this.data = inner.data;
             this.color = inner.color;
             this.colorTwo = inner.colorTwo;
-            if (targetThing.def.tradeTags != null && targetThing.def.tradeTags.Contains("Armor"))
-            {
-                this.isArmor = true;
-            }
+            //if (targetThing.def.tradeTags != null && targetThing.def.tradeTags.Contains("Armor"))
+            //{
+            //    this.isArmor = true;
+            //}
         }
 
         public override string ToString() => $"Graphic_TornWrapper({inner})";
@@ -62,18 +61,17 @@ namespace ApparelDamageVisuals.ADVGraphics
             }
             try
             {
-                durabilityCached = Durability;
                 if (!drawers.TryGetValue(rot, out TornApparelRotDrawer drawer))
                 {
                     drawers[rot] = drawer = new TornApparelRotDrawer();
                 }
                 var baseMat = inner.MatAt(rot, thing);
-                return drawer.GetMaterial(baseMat, Durability);
+                return drawer.GetMaterial(baseMat, Durability, targetThing);
             }
             catch (Exception e)
             {
                 string thingName = thing != null ? thing.ThingID : "None";
-                Log.Error($"ADV: failed to draw torn apparel mat for {thingName}, stacktrace: {e}");
+                ADVLogger.Error($"failed to draw torn apparel mat for {thingName}, stacktrace: {e}");
             }
 
             return base.MatAt(rot, thing);

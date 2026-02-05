@@ -1,4 +1,5 @@
 ﻿using ApparelDamageVisuals.ADVShader;
+using ApparelDamageVisuals.Comps;
 using ApparelDamageVisuals.Utils;
 using RimWorld;
 using System;
@@ -31,7 +32,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             return ApparelDamageVisualsMod.Settings.MaxCameraZoom > Find.Camera.orthographicSize;
         }
 
-        public Material GetMaterial(Material baseMat, float durability)
+        public Material GetMaterial(Material baseMat, float durability, Thing apparel)
         {
 
             // Use cached material as piority
@@ -49,7 +50,7 @@ namespace ApparelDamageVisuals.ADVGraphics
 
             this.durabilityCached = durability;
             // Render Torn Material on main thread only
-            return this.materialCached = BuildTornMaterial(baseMat, durability);
+            return this.materialCached = BuildTornMaterial(baseMat, durability, apparel);
         }
 
         protected void CopyIfPresent(Material src, Material dst, string prop)
@@ -57,7 +58,7 @@ namespace ApparelDamageVisuals.ADVGraphics
             if (src.HasProperty(prop)) dst.SetColor(prop, src.GetColor(prop));
         }
 
-        protected Material BuildTornMaterial(Material baseMat, float durability)
+        protected Material BuildTornMaterial(Material baseMat, float durability, Thing apparel)
         {
             try
             {
@@ -66,6 +67,8 @@ namespace ApparelDamageVisuals.ADVGraphics
                 {
                     shader = ADVContentDatabase.TestUnlitShader
                 };
+
+                // Decide mask
                 Texture2D mask = ADVContentDatabase.MaskLv1;
                 if (durability < 0.5 && durability > 0.2)
                 {
@@ -76,11 +79,24 @@ namespace ApparelDamageVisuals.ADVGraphics
                     mask = ADVContentDatabase.MaskLv3;
                 }
                 newMat.SetTexture("_Mask", mask);
+
+                // Decide damage layer color
+                Color damageLayerColor = Color.grey;
+                CompApparelDamageTracker apparelDamageComp = null;
+                if (apparel != null)
+                apparelDamageComp = apparel.TryGetComp<CompApparelDamageTracker>();
+                if (apparelDamageComp != null)
+                {
+                    damageLayerColor = apparelDamageComp.ApparelDamageColor;
+                    //ADVLogger.Message($"Current damge: {apparelDamageComp.mostRecentDamage}");
+                }
+                newMat.SetColor("_DamageLayerColor", damageLayerColor);
+
                 return newMat;
             }
             catch (Exception ex)
             {
-                ADVLogger.ADVError(ex.ToString());
+                ADVLogger.Error(ex.ToString());
             }
 
             return baseMat;

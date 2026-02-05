@@ -96,6 +96,8 @@
     <Compile Include="ADVSettings.cs" />
     <Compile Include="ApparelDamageVisualsMod.cs" />
     <Compile Include="ADVGraphics\Graphic_TornWrapper.cs" />
+    <Compile Include="Comps\CompApparelDamageTracker.cs" />
+    <Compile Include="Comps\CompProperties_ApparelDamageTracker.cs" />
     <Compile Include="Comps\MapComp_CameraTracker.cs" />
     <Compile Include="Patches\ApparelGraphicPatch.cs" />
     <Compile Include="Patches\MetaPatches.cs" />
