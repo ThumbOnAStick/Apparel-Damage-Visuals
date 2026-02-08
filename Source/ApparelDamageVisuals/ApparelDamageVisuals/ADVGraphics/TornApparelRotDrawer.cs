@@ -79,8 +79,8 @@ namespace ApparelDamageVisuals.ADVGraphics
                     mask = ADVContentDatabase.MaskLv3;
                 }
                 newMat.SetTexture("_Mask", mask);
+                newMat.SetFloat("_RevealAmount", ApparelDamageVisualsMod.Settings.HoleSize);
 
-                // Decide damage layer color
                 Color damageLayerColor = Color.grey;
                 CompApparelDamageTracker apparelDamageComp = null;
                 if (apparel != null)
@@ -88,7 +88,6 @@ namespace ApparelDamageVisuals.ADVGraphics
                 if (apparelDamageComp != null)
                 {
                     damageLayerColor = apparelDamageComp.ApparelDamageColor;
-                    //ADVLogger.Message($"Current damge: {apparelDamageComp.mostRecentDamage}");
                 }
                 newMat.SetColor("_DamageLayerColor", damageLayerColor);
 

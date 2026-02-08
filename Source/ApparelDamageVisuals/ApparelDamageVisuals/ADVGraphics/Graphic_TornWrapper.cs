@@ -45,8 +45,7 @@ namespace ApparelDamageVisuals.ADVGraphics
 
         public override string ToString() => $"Graphic_TornWrapper({inner})";
 
-        // Return inner's material, fallback to base only if inner exists
-        public override Material MatSingle => inner != null ? inner.MatSingle : null;
+        public override Material MatSingle => inner?.MatSingle;
 
         float Durability => targetThing != null && targetThing.MaxHitPoints > 0
             ? (float)targetThing.HitPoints / targetThing.MaxHitPoints
